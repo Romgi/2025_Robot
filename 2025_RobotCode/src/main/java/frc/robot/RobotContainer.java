@@ -30,11 +30,14 @@ public class RobotContainer {
   private final CommandXboxController m_driverController =
       new CommandXboxController(OperatorConstants.kDriverControllerPort);
 
-  /** The container for the robot. Contains subsystems, OI devices, and commands. */
+  //The container for the robot. Contains subsystems, OI devices, and commands.
   public RobotContainer() {
     // Configure the trigger bindings
     configureBindings();
+
+    //----------Set default drive command here----------\\
     drivebase.setDefaultCommand(driveFieldOrientedAngularVelocity);
+    
   }
 
 //--------------------Swerve Drive Code--------------------\\
@@ -46,7 +49,7 @@ public class RobotContainer {
                                                                                         .withControllerRotationAxis(m_driverController::getRightX)
                                                                                         .deadband(OperatorConstants.DEADBAND)
                                                                                         .scaleTranslation(OperatorConstants.SWERVE_TRANSLATION_SCALE)
-                                                                                        
+
                                                                     //Swerve perspective changes depending on which side of the field the driverstation is on
                                                                                         .allianceRelativeControl(true);
 
@@ -55,7 +58,7 @@ public class RobotContainer {
                                                                                              m_driverController::getRightY)
                                                                                              .headingWhile(true);
 
-  //Drive Command
+  //Drive Commands
   Command driveFieldOrientedDirectAngle = drivebase.driveFieldOriented(driveDirectAngle);
   Command driveFieldOrientedAngularVelocity = drivebase.driveFieldOriented(driveAngularVelocity);
 
