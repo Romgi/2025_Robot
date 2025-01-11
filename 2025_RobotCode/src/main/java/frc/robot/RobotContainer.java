@@ -46,7 +46,8 @@ public class RobotContainer {
   SwerveInputStream driveAngularVelocity = SwerveInputStream.of(drivebase.getSwerveDrive(),
                                                                                         () -> m_driverController.getLeftY() * -1,
                                                                                         () -> m_driverController.getLeftX() * -1 )
-                                                                                        .withControllerRotationAxis(m_driverController::getRightX)
+                                                                                        .withControllerRotationAxis(
+                                                                                        () -> m_driverController.getRightX() * OperatorConstants.SWERVE_ROTATION_SCALE)
                                                                                         .deadband(OperatorConstants.DEADBAND)
                                                                                         .scaleTranslation(OperatorConstants.SWERVE_TRANSLATION_SCALE)
 
@@ -54,8 +55,9 @@ public class RobotContainer {
                                                                                         .allianceRelativeControl(true);
 
   //Desired angle of rotation for drive base
-  SwerveInputStream driveDirectAngle = driveAngularVelocity.copy().withControllerHeadingAxis(m_driverController::getRightX,
-                                                                                             m_driverController::getRightY)
+  SwerveInputStream driveDirectAngle = driveAngularVelocity.copy().withControllerHeadingAxis(
+                                                                                            () -> m_driverController.getRightX() * OperatorConstants.SWERVE_ROTATION_SCALE,
+                                                                                            () -> m_driverController.getRightY() * OperatorConstants.SWERVE_ROTATION_SCALE)
                                                                                              .headingWhile(true);
 
   //Drive Commands
