@@ -40,7 +40,7 @@ public class RobotContainer {
     
   }
 
-//--------------------Swerve Drive Code--------------------\\
+//-------------------------Swerve Drive Code-------------------------\\
 
   //Rotational velocity for drive base
   SwerveInputStream driveAngularVelocity = SwerveInputStream.of(drivebase.getSwerveDrive(),
@@ -64,7 +64,7 @@ public class RobotContainer {
   Command driveFieldOrientedDirectAngle = drivebase.driveFieldOriented(driveDirectAngle);
   Command driveFieldOrientedAngularVelocity = drivebase.driveFieldOriented(driveAngularVelocity);
 
-  //---------------------------------------------------------\\
+  //-------------------------------------------------------------------\\
 
   /**
    * Use this method to define your trigger->command mappings. Triggers can be created via the
