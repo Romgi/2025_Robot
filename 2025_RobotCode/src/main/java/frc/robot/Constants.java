@@ -19,7 +19,7 @@ public final class Constants {
     public static final int kDriverControllerPort = 0;
     public static final double DEADBAND = 0.02;
     public static final double SWERVE_TRANSLATION_SCALE = 1;
-    public static final double SWERVE_ROTATION_SCALE = -0.5; //Negative values invert right stick
+    public static final double SWERVE_ROTATION_SCALE = -1; //Negative values invert right stick
   }
 public static final double MAX_SPEED = Units.feetToMeters(24);
 }
