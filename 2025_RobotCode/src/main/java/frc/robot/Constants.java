@@ -16,15 +16,9 @@ import edu.wpi.first.math.util.Units;
  */
 public final class Constants {
   public static class OperatorConstants {
-
-    //Controller Constants
     public static final int kDriverControllerPort = 0;
-    public static final double LEFT_Y_DEADBAND = 0.1;
-    public static final double LEFT_X_DEADBAND = 0.1;
-    public static final double TurnSpeed = -2;
     public static final double DEADBAND = 0.05;
+    public static final double SWERVE_TRANSLATION_SCALE = 1;
   }
-
-//Absolute Maximum Swerve Drive Speed
-public static final double MAX_SPEED = Units.feetToMeters(10);
+public static final double MAX_SPEED = Units.feetToMeters(4.5);
 }
